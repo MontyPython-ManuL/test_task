@@ -12,6 +12,15 @@ This is an HTTP API for uploading, optimizing, and serving images. The API allow
 ## Installation
 
 To get started with the Image Optimization API, follow these steps:
+0. Create migrate:
+   ```
+   python manage.py makemigrations
+   python manage.py migrate
+   ```
+0. Authorize in admin panel:
+   ```
+   python manage.py createsuperuser
+   ```
 
 1. Clone the repository to your local machine:
    ```

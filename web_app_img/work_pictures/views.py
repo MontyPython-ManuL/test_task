@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from rest_framework.parsers import MultiPartParser
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from .forms import ImgForm
@@ -34,8 +33,8 @@ class DownloadImageView(APIView):
 
         image_id = request.GET.get('id')
         quality = request.GET.get('quality')
-        icon_format_instance = PictureSaveVariations.objects.get(id=image_id)
 
+        icon_format_instance = PictureSaveVariations.objects.get(id=image_id)
         image_data = self._get_image_file_content_by_quality(request, icon_format_instance, quality)
 
         if isinstance(image_data, HttpResponseNotFound):
